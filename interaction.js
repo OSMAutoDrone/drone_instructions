@@ -3,6 +3,51 @@
  * guides.
  */
 
+const RPi = "Raspberry Pi 5";
+const Cube = "contrôleur de vol";
+const GCS = "station de contrôle au sol";
+const ESC = "variateur de vitesse électronique";
+const ESCs = "variateurs de vitesse électronique";
+
+function replaceRPiAliases() {
+    for (const element of document.querySelectorAll("rpi")) {
+        element.replaceWith(RPi, ...element.childNodes);
+    }
+}
+
+function replaceCubeAliases() {
+    for (const element of document.querySelectorAll("cube")) {
+        element.replaceWith(Cube, ...element.childNodes);
+    }
+}
+
+function replaceGCSAliases() {
+    for (const element of document.querySelectorAll("gcs")) {
+        element.replaceWith(GCS, ...element.childNodes);
+    }
+}
+
+function replaceESCAliases() {
+    for (const element of document.querySelectorAll("esc")) {
+        element.replaceWith(ESC, ...element.childNodes);
+    }
+    for (const element of document.querySelectorAll("escs")) {
+        element.replaceWith(ESCs, ...element.childNodes);
+    }
+
+}
+
+// C-style macro text replacement
+replaceRPiAliases();
+replaceCubeAliases();
+replaceGCSAliases();
+replaceESCAliases();
+
+new MutationObserver(replaceRPiAliases).observe(document.body, {
+    childList: true,
+    subtree: true,
+});
+
 // Edit a tool here; its BOM entry and every mention update together.
 function demoImage(label) {
     const safeLabel = label.replace(/[&<>"']/g, (character) => {
@@ -32,10 +77,47 @@ function demoImage(label) {
 }
 
 const tools = {
-    driver: {
-        name: "Tournevis étoile (Phillips #2)",
-        image: demoImage("Tournevis étoile"),
-        alt: "Illustration d'un tournevis étoile",
+    M2p5AllenKey: {
+        name: "Clé hexagonale M2.5",
+        image: demoImage("Clé hexagonale M2.5"),
+        alt: "Illustration d'une clé hexagonale M2.5",
+    },
+    M3AllenKey: {
+        name: "Clé hexagonale M3",
+        image: demoImage("Clé hexagonale M3"),
+        alt: "Illustration d'une clé hexagonale M3",
+    },
+    M4AllenKey: {
+        name: "Clé hexagonale M4",
+        image: demoImage("Clé hexagonale M4"),
+        alt: "Illustration d'une clé hexagonale M4",
+    },
+    Wrench8mm: {
+        name: "Clé anglaise 8 mm",
+        image: demoImage("Clé anglaise 8 mm"),
+        alt: "Illustration d'une clé anglaise 8 mm",
+    },
+    Wrench10mm: {
+        name: "Clé anglaise 10 mm",
+        image: demoImage("Clé anglaise 10 mm"),
+        alt: "Illustration d'une clé anglaise 10 mm",
+    },
+    LongNosePliers: {
+        name: "Pince à long bec",
+        image: demoImage("Pince à long bec"),
+        precision: "petite",
+        alt: "Illustration d'une pince à long bec",
+    },
+    ViseGripPliers: {
+        name: "Pince autobloquante (pince étau)",
+        image: demoImage("Pince autobloquante"),
+        alt: "Illustration d'une pince autobloquante",
+    },
+    FlushCutPliers: {
+        name: "Pince coupante à ras",
+        image: demoImage("Pince coupante à ras"),
+        precision: "petite",
+        alt: "Illustration d'une pince coupante à ras",
     },
 };
 
@@ -43,7 +125,9 @@ const toolList = document.querySelector("#tool-list");
 
 for (const tool of Object.values(tools)) {
     const item = document.createElement("li");
-    item.textContent = tool.name;
+    item.textContent = tool.precision
+        ? `${tool.name} (${tool.precision})`
+        : tool.name;
     toolList.append(item);
 }
 

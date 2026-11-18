@@ -17,14 +17,22 @@
             <div>
                 <h2 id="introduction">Introduction</h2>
                 <p>
-                    This example shows the structure of our drone assembly guide.
-                    Replace the sample parts, photos, and instructions with those for
-                    our actual build.
+                    Utiliser ce guide pour désassembler, en partie ou en entier, le drone. Ce guide considère que les
+                    étapes suivantes ont été réalisées <strong>AVANT</strong> de commencer le désassemblage:
+                <ul>
+                    <li>Désarmer les moteurs</li>
+                    <li>Éteindre le
+                        <Cube /> (recommandé)
+                    </li>
+                    <li>Éteindre le
+                        <RPi /> (recommandé)
+                    </li>
+                </ul>
                 </p>
                 <p>
-                    Keep the battery disconnected and propellers removed while
-                    assembling or checking the drone. Verify wiring against the
-                    specifications for our particular components.
+                    Lors de la vérification du drone ou lors du désassemblage, garder <strong>en tout temps</strong> la
+                    batterie
+                    déconnectée et les hélices retirées.
                 </p>
             </div>
 
@@ -53,10 +61,9 @@
                 <div>
                     <h3>Pièces</h3>
                     <ul>
-                        <li>Drone frame and mounting hardware</li>
-                        <li>Four motors</li>
-                        <li>Flight controller and motor controllers</li>
-                        <li>Battery and propellers</li>
+                        <li>Attaches autobloquantes (optionnel)</li>
+                        <li>Support pour la structure (optionnel)</li>
+                        <li>TODO</li>
                     </ul>
                 </div>
                 <div>
@@ -71,16 +78,475 @@
         <section class="section step">
             <h2>
                 <strong class="step-number"></strong>
-                <span>Disconnect the battery</span>
+                <span>Avant de Commencer</span>
+            </h2>
+            <div class="instructions">
+                <p>Couper toutes les attaches autobloquantes avec la <span data-tool="FlushCutPliers"></span></p>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Débrancher la Batterie</span>
+            </h2>
+            <div class="instructions">
+                <p>Assurer qu'aucun contact électrique ne puisse se produire avec le connecteur de la batterie</p>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Retirer les Hélices</span>
             </h2>
             <div class="instructions">
                 <p>
-                    Power off the drone, disconnect the battery, and confirm that the
-                    propellers cannot spin before continuing.
+                <ul>
+                    <li>Dévisser les boulons de fixation avec la <span data-tool="M2p5AllenKey"></span></li>
+                    <li>Retirer les boulons et la plaque de fixation des moteurs</li>
+                    <li>Retirer les hélices, et les ranger dans leur étui protecteur</li>
+                    <li>Retirer les entretoises des moteurs</li>
+                    <li class="note">Ranger toute la quincaillerie de fixation des hélices dans un sac bien identifié.
+                    </li>
+                </ul>
                 </p>
             </div>
         </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Débrancher les câbles du
+                    <RPi />
+                </span>
+            </h2>
+            <div class="instructions">
+                <ul>
+                    <li>Débrancher le câble de communication du
+                        <Cube /> (micro-USB)
+                    </li>
+                    <li>Passer le câble de communication à travers les ouvertures des trois plaques pour le dégager</li>
+                    <li>Débrancher le câble de communication du
+                        <RPi /> (USB-A)
+                    </li>
+                    <li>Débrancher le câble d'alimentation du
+                        <RPi />
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Retirer le
+                    <RPi />
+                </span>
+            </h2>
+            <div class="instructions">
+                <ul>
+                    <li>Désangler le
+                        <RPi />
+                    </li>
+                    <li>Retirer le
+                        <RPi /> de la plaque inférieure du drone
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Retirer les GPS</span>
+            </h2>
+            <div class="instructions">
+                <ul>
+                    <li>Débrancher les câbles GPS de la carte porteuse du
+                        <Cube /> (ports CAN1 et CAN2)
+                    </li>
+                    <li class="note">Noter quel câble est branché sur quel port</li>
+                    <li>Dévisser les boulons de fixation des tiges des antennes GPS avec la <span
+                            data-tool="M2p5AllenKey"></span></li>
+                    <li>Retirer les assemblages tige-antenne des bases de fixation</li>
+                    <li>Dévisser les boulons de la base de fixation des antennes GPS avec la <span
+                            data-tool="M2p5AllenKey"></span> et la <span data-tool="LongNosePliers"></span></li>
+                    <li>Retirer les bases de fixation de la plaque supérieure</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Retirer le module de communication de la Station de Contrôle au Sol</span>
+            </h2>
+            <div class="instructions">
+                <ul>
+                    <li>Dévisser les antennes du module de communication de la
+                        <GCS />
+                    </li>
+                    <li>Débrancher le câble du port TELEM1 du
+                        <Cube />
+                    </li>
+                    <li>Retirer le module de communication de la
+                        <GCS /> de la plaque supérieure
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Retirer les Modules de Communication de la Manette</span>
+            </h2>
+            <div class="instructions">
+                <ul>
+                    <li>Débrancher le câble du port RCIN du
+                        <Cube />
+                    </li>
+                    <li>Retirer le ruban adhésif de l'antenne radio du module de communication de la manette</li>
+                    <li>Débrancher le câble reliant le module de communication de la manette au module OSM-X</li>
+                    <li>Retirer les deux modules de la plaque supérieure</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Retirer l'extension micro-USB et l'Avertisseur Sonore</span>
+            </h2>
+            <div class="instructions">
+                <ul>
+                    <li>Débrancher le câble du port USB1 du
+                        <Cube />
+                    </li>
+                    <li>Retirer le câble d'extension micro-USB et l'avertisseur sonore de la plaque supérieure</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Retirer le Bouton d'Armement des Moteurs</span>
+            </h2>
+            <div class="instructions">
+                <ul>
+                    <li>Débrancher le câble du port GPS1 du
+                        <Cube />
+                    </li>
+                    <li>Retirer le ruban adhésif autour du bouton d'armement des moteurs</li>
+                    <li>Retirer le bouton d'armement</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Retirer les câbles de commande des Variateurs de Vitesse Électronique</span>
+            </h2>
+            <div class="instructions">
+                <ul>
+                    <li>Débrancher les câbles des ports MAIN OUT 1 à 4 de la carte porteuse du
+                        <Cube />
+                    </li>
+                    <li class="note">Noter quel câble de commande est branché sur quel port</li>
+                    <li>Passer les câbles de commande à travers la plaque supérieure pour les dégager</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Retirer le Contrôleur de Vol</span>
+            </h2>
+            <div class="instructions">
+                <ul>
+                    <li>Débrancher le câble d'alimentation du
+                        <Cube /> du port POWER1
+                    </li>
+                    <li>Passer le câble d'alimentation à travers la plaque supérieure et la plaque intermédiaire pour le
+                        dégager</li>
+                    <li>Retirer le
+                        <Cube /> de la plaque supérieure
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Débrancher l'Électronique d'Alimentation</span>
+            </h2>
+            <div class="instructions">
+                <ul>
+                    <li>Débrancher tous les câbles du PCB</li>
+                    <li>Débrancher les deux câbles du convertisseur de tension 5V</li>
+                    <li>Retirer le convertisseur de tension 5V de la plaque intermédiaire</li>
+                    <li>Retirer le capteur de courant et de tension de la plaque intermédiaire</li>
+                    <li>Retirer le PCB de son support de fixation</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Retirer la Plaque Supérieure</span>
+            </h2>
+            <div class="instructions">
+                <ul>
+                    <li>Retirer le ruban adhésif électrique des boulons M5 du support de fixation</li>
+                    <li>Dévisser les écrous M6 (extérieur) de la plaque supérieure avec la <span
+                            data-tool="Wrench10mm"></span> en tenant fermement les tiges filetées avec la <span
+                            data-tool="ViseGripPliers"></span></li>
+                    <li>Dévisser les écrous M5 (intérieur) de la plaque supérieure avec la <span
+                            data-tool="Wrench8mm"></span> et la <span data-tool="M4AllenKey"></span></li>
+                    <li class="note">Ne <strong>pas</strong> retirer les boulons M5 tout de suite: ils aident à retenir
+                        les bras moteurs par la friction</li>
+                    <li>Retirer la plaque supérieure</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Retirer le Support de Fixation du PCB</span>
+            </h2>
+            <div class="instructions">
+                <ul>
+                    <li>Un par un, retirer les boulons M5 du support de fixation du PCB</li>
+                    <li class="tip">Pour accélérer l'assemblage ultérieur, remplacer les boulons M5 par une attache
+                        autobloquante pour préserver l'alignement des entretoises des bras moteurs</li>
+                    <li>Retirer le support de fixation du PCB de la plaque intermédiaire</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Libérer les Supports Structurels en Aluminium</span>
+            </h2>
+            <div class="instructions">
+                <ul>
+                    <li>Dévisser les boulons de fixation des supports structurels en aluminium des trains d'atterrissage
+                        avec la <span data-tool="M3AllenKey"></span> et la <span data-tool="LongNosePliers"></span></li>
+                    <li class="note">Ne <strong>pas</strong> dévisser les écrous M6 de la plaque inférieure</li>
+                    <li class="note">S'assurer que les supports structurels sont identifiés avec leur train
+                        d'atterrissage correspondant</li>
+                    <li>Dégager les supports structurels en aluminium des trains d'atterrissage</li>
+                    <li class="note">À cette étape, la structure devient instable. Il est recommandé d'ajouter une
+                        structure de support sous la plaque inférieure</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Retirer les Bras Moteurs et les Trains d'Atterrissage</span>
+            </h2>
+            <div class="instructions">
+                <ul>
+                    <li>S'assurer que tous les câbles passant à travers les bras moteurs soient bien dégagés et libres
+                        de mouvement</li>
+                    <li>Retirer les assemblages {bras moteur, train d'atterrissage}</li>
+                    <li class="tip">Pour accélérer l'assemblage ultérieur, en retirant le bras moteur de la tige
+                        filetée, insérer graduellement une attache autobloquante pour préserver l'alignement des
+                        entretoises des bras moteurs</li>
+                    <li class="note">Pour désassembler les bras moteurs, voir <a href="#motor-arm-disassembly">ce
+                            guide</a></li>
+                    <li class="note">Pour désassembler les trains d'atterrissage, voir <a
+                            href="#landing-gear-disassembly">ce guide</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Retirer la Plaque Intermédiaire</span>
+            </h2>
+            <div class="instructions"></div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Retirer la Plaque Inférieure</span>
+            </h2>
+            <div class="instructions">
+                <ul>
+                    <li>Dévisser les écrous M6 qui fixent les supports structurels en aluminium et la plque inférieure
+                        avec la <span data-tool="Wrench10mm"></span>, et tenir fermement les tige filetées avec la <span
+                            data-tool="ViseGripPliers"></span></li>
+                    <li>Retirer les écrous M6 et les supports structurels en aluminium</li>
+                    <li>Retirer la plaque inférieure des tiges filetées</li>
+                    <li class="note">(Optionnel) Retirer la sangle de la batterie de la plaque inférieure</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Désassembler les Tiges Filetées (Optionnelle)</span>
+            </h2>
+            <div class="instructions">
+                <ul>
+                    <li class="note">Cette étape peut être ignorée si un ajustement de la position des écrous sur les
+                        tiges filetées n'est pas nécessaire</li>
+                    <li>Retirer les écrous M6 des tiges filetées en les dévissant avec la <span
+                            data-tool="Wrench10mm"></span>, et tenir fermement les tige filetées avec la <span
+                            data-tool="ViseGripPliers"></span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Add spacing between the main disassembly and the appendices -->
+        <br><br><br><br>
+
+        <section class="appendix">
+            <h1 id="motor-arm-disassembly">Désassemblage du Bras Moteur</h1>
+            <p><strong>IMPORTANT!</strong> En tout temps, le bras moteur ne devrait jamais être déposé de sorte que le
+                moteur support la charge.</p>
+
+            <section class="section step">
+                <h2>
+                    <strong class="step-number"></strong>
+                    <span>Séparer les Deux Assemblages</span>
+                </h2>
+                <div class="instructions">
+                    <p>Si le train d'atterrissage est fixé au bras moteur, suivre les étapes suivantes (sinon, ignorer
+                        cette
+                        étape):</p>
+                    <ul>
+                        <li>Dévisser le boulon M3x30 des trains d'atterrissage avec la <span
+                                data-tool="M3AllenKey"></span>, et
+                            retirer le boulon et l'entretoise en plastique</li>
+                        <li>Retirer le train d'atterrissage du bras moteur</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section step">
+                <h2>
+                    <strong class="step-number"></strong>
+                    <span>Débrancher les Câbles</span>
+                </h2>
+                <div class="instructions">
+                    <ul>
+                        <li>Débrancher le câble entre le moteur et le
+                            <ESC />
+                        </li>
+                        <li>Débrancher le câble d'alimentation du
+                            <ESC />
+                        </li>
+                        <li>Tirer délicatement le câble de commande du
+                            <ESC /> en dehors du bras moteur (le plus possible), et débrancher le câble de commande
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section step">
+                <h2>
+                    <strong class="step-number"></strong>
+                    <span>Retirer le Moteur</span>
+                </h2>
+                <div class="instructions">
+                    <ul>
+                        <li>Dévisser les deux boulons M3 de fixation du moteur avec la <span
+                                data-tool="M3AllenKey"></span> et les retirer</li>
+                        <li>Retirer le moteur</li>
+                        <li class="note">Idéalement, remettre le moteur dans sa boîte. De plus, mettre les boulons M3,
+                            et leur(s) rondelle(s) associée(s) le cas échéant, dans la même boîte, de sorte à les
+                            identifier à leur moteur correspondant</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section step">
+                <h2>
+                    <strong class="step-number"></strong>
+                    <span>Vider le Bras Moteur</span>
+                </h2>
+                <div class="instructions">
+                    <ul>
+                        <li>Retirer les entretoises (4) des bras moteurs</li>
+                        <li class="note">Retirer les entretoises peut s'avérer difficile. Il est recommandé d'utiliser
+                            une longue tige rigide pour pousser les entretoises en dehors des bras moteurs</li>
+                        <li>Retirer le câble d'alimentation du
+                            <ESC /> du bras moteur
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </section>
+
+        <!-- Add spacing between the main disassembly and the appendices -->
+        <br><br><br><br>
+
+        <section class="appendix">
+            <h1 id="landing-gear-disassembly">Désassemblage du Train d'Atterrissage</h1>
+
+            <section class="section step">
+                <h2>
+                    <strong class="step-number"></strong>
+                    <span>Séparer les Deux Assemblages</span>
+                </h2>
+                <div class="instructions">
+                    <p>Si le train d'atterrissage est fixé au bras moteur, suivre les étapes suivantes (sinon, ignorer
+                        cette
+                        étape):</p>
+                    <ul>
+                        <li>Dévisser le boulon M3x30 des trains d'atterrissage avec la <span
+                                data-tool="M3AllenKey"></span>, et
+                            retirer le boulon et l'entretoise en plastique</li>
+                        <li>Retirer le train d'atterrissage du bras moteur</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section step">
+                <h2>
+                    <strong class="step-number"></strong>
+                    <span>Retirer le Support de Fixation</span>
+                </h2>
+                <div class="instructions">
+                    <ul>
+                        <li>Dévisser le boulon M3x25 du support de fixation du train d'atterrissage avec la <span
+                                data-tool="M3AllenKey"></span> et retirer le boulon</li>
+                        <li>Retirer le support de fixation</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section step">
+                <h2>
+                    <strong class="step-number"></strong>
+                    <span>Retirer le Patin</span>
+                </h2>
+                <div class="instructions">
+                    <ul>
+                        <li>Dévisser le boulon M3x25 du patin <span data-tool="M3AllenKey"></span> et retirer le boulon
+                        </li>
+                        <li>Retirer le patin</li>
+                    </ul>
+                </div>
+            </section>
+        </section>
     </main>
+
 
     <dialog class="lightbox" id="lightbox" aria-label="Enlarged step photo">
         <button class="lightbox-close" type="button">Close ×</button>

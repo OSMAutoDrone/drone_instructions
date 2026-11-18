@@ -1,0 +1,118 @@
+# Étapes d'assemblage
+
+## Champ de vol
+
+1. Fixer les hélices (x4)
+	1.1 Mettre l'entretoise sur l'arbre du moteur
+	1.2 Insérer l'hélice sur l'arbre du moteur
+	1.3 Insérer le support de fixation par-dessus l'hélice
+	1.4 Visser l'hélice au moteur avec les deux boulons M3
+2. Brancher la batterie
+3. Sécuriser la batterie avec les Velcro
+
+## Assemblage
+
+### Bras moteurs
+
+1. Passer le câble d'alimentation à travers le bras
+	NOTE: Côté femelle vers moteur, côté mâle vers la structure centrale
+2. Passer le câble de commande ESC à travers le bras
+	NOTE: Côté mâle vers moteur, côté mâle vers la structure centrale
+3. Brancher les deux câbles (alim. + commande) à l'ESC
+4. Sécuriser la connexion du câble de commande (e.g. avec ruban adhésif ou colle chaude)
+	NOTE: ajouter une section "N.B." où on mentionne que la connexion est fragile
+NOTE: les deux étapes suivantes sont (probablement) les plus difficiles et longues de l'assemblage. Elles requièrent une bonne patience et une bonne dextérité.
+5. Insérer les deux entretoises extérieures dans le bras
+	5.1 Faire un pochon avec une entretoise et deux rondelles, et emballer le pochon avec du ruban adhésif de peintre de sorte à tenir le pochon en place
+	5.2 Pousser les câbles à l'intérieur du bras vers un côté (pour dégager le plus d'espace possible pour l'entretoise
+	5.3 Glisser l'entretoise dans le bras et l'aligner avec le trou de fixation du moteur
+	5.4 Sécuriser le positionnement de l'entretoise en insérant un boulon M3 à travers les trous de fixation et l'entretoise (de sorte à maintenir en place jusqu'à l'installation des moteurs)
+6. Répéter l'étape 5 pour les deux entretoises intérieures
+	NOTE: Utiliser une longue tige rigide pour faciliter le glissement des entretoises dans le bras.
+	NOTE: pour l'étape 6.4, une attache auto-bloquante est une fixation temporaire alternative viable.
+7. Visser le moteur sur le bras avec les boulons M3 installés à l'étape 5
+8. Vérifier l'espacement entre le pas de vis et la bobine du moteur
+	8.1 Si l'espacement est suffisant (Voir exemple correct), passer à l'étape 9
+	8.2 Si l'espacement est insuffisant (Voir exemple incorrect), passer à l'étape 8.3
+	8.3 Retirer les boulon, et ajouter une rondelle au boulon affecté (du même côté que la tête du boulon).
+		NOTE: Empiriquement, on a identifié que la méthode la plus efficace était de dévisser les deux boulons, retirer le moteur, remplacer le boulon affecté par une attache auto-bloquante (pour maintenir l'alignement de l'entretoise), et de répéter l'étape 7.
+	NOTE: cette étape est un processus itératif, et peux nécessiter plusieurs répétitions pour assurer un espacement suffisant pour tous les boulons
+9. Connecter le câble du moteur à l'ESC (câble à trois branches)
+10. Fixer l'ESC et les câbles au bras moteur avec des attaches auto-bloquantes
+	NOTE: Serrer les attaches le plus possible, de sorte à minimiser le mouvement de l'ESC. Des pinces à long bec sont utiles pour aller chercher un niveau maximal de serrage.
+11. Identifier les pièces suivantes comme appartenant au même assemblage:
+	- Bras moteur
+	- Moteur
+	- ESC
+	- Câbles passant à travers le bras moteur
+12. Répéter les étapes 1 à 11 pour tous les moteurs
+
+### Trains d'atterrissage
+
+1. Fixer le support de fixation (train-bras) avec un boulon M3x25
+2. Fixer le patin au train avec un boulon M3x25
+3. S'assurer que toutes les pièces sont bien alignées (trous des pièces en TPU parallèles, et perpendiculaires au trou pour "flat bar")
+4. Répéter les étapes 1 à 3 pout tous les trains d'atterrissage
+
+### Assemblage de la structure
+
+1. Visser un écrou M6 sur la tige filetée jusqu'à la bonne distance (Voir photo) (x4)
+2. Visser un écrou M6 de puis l'autre côté de la tige filetée jusqu'à la bonne distance (Voir photo) (x4)
+3. Insérer une rondelle sur les tiges filetées, et insérer la plaque inférieure à travers les tiges filetées
+	NOTE: s'assurer d'insérer la plaque du bon côté (respecter l'orientation)
+4. Insérer les "flat bars" en aluminium dans les tiges filetées
+5. Insérer une rondelle sur les tiges filetées, et sécuriser la plaque inférieure et les "fat bars" avec des écrous M6
+6. Insérer une rondelle sur l'autre côté des tiges filetées, et insérer la plaque intermédiaire à travers les tiges filetées
+	NOTE: s'assurer de respecter l'orientation de la plaque intermédiaire avec la plaque inférieure
+7. Insérer le bras moteur sur la plaque intermédiaire à travers la tige filetée
+	NOTE: ajouter un "tips" d'insérer l'attache auto-bloquante temporaire du trou intérieur à travers la plaque intermédiaire (pour préserver l'alignement de l'entretoise). Pour le trou de la tige filetée, retirer l'attache auto-bloquante à mesure que le bras est insérer dans la tige filetée.
+8. Passer le câble d'alimentation à travers les ouverture de la plaque intermédiaire (Voir photo)
+	NOTE: ajouter une précision sur quel câble doit aller dans quelle ouverture (2/2)
+9. Répéter les étapes 7 et 8 pour tous les bras moteurs
+10. S'assurer que tous les câbles de commandes sont bien identifiés (avec leur bras moteur correspondant)
+11. Insérer le support de fixation du PCB à travers les attaches auto-bloquantes temporaires
+12. Remplacer l'attache auto-bloquante par un boulon M5 sur le support de fixation du PCB (x4)
+	NOTE: ne pas fixer les boulons avec leur écrou; ils devraient tenir par friction
+13. Déposer la plaque supérieure sur l'assemblage, et passer les câbles de commande à travers une ouverture
+	NOTE: s'assurer de respecter l'alignement/orientation de la plaque supérieure avec les plaques intermédiaire et inférieure
+14. Insérer la plaque supérieure à travers les tiges filetées et les boulons M5
+15. Fixer la plaque supérieure au niveau des boulons M5 avec des écrous M5 (x4)
+16. Fixer la plaque supérieure au niveau des tige filetées avec des écrous M6 (x4)
+18. Appliquer du ruban électrique sur les têtes des boulons M5 du support de fixation du PCB (pour éviter toute possibilité d'un contact électrique)
+18. L'assemblage des éléments structurels du drone est terminé. Prendre une pause bien méritée (et manger une Patte d'ours, quelques Biscoff, ou une pomme).
+
+19. Appliquer le "Dual-Lock" sur le PCB, et le fixer sur son support
+20. Fixer le "Mauch PL-sensor" sur la plaque intermédiaire, et brancher son câble d'alimentation dans le PCB
+21. Brancher tous les câbles d'alimentation des ESC sur le PCB
+22. Fixer le convertisseur de tension 5V "Mauch" sur la plaque intermédiaire, et brancher son câble d'alimentation dans le PCB
+23. Brancher le câble entre le "Mauch PL-sensor" et le convertisseur de tension 5V "Mauch" dans le port gauche du convertisseur de tension
+
+24. Fixer le module CubePilot (Cube) sur la plaque supérieure
+25. Brancher le câble d'alimentation du Cube dans le convertisseur de tension 5V "Mauch" (port de droite)
+26. Passer le câble d'alimentation à travers l'ouverture des plaques intermédiaire et supérieure, et brancher le câble dans le port POWER1 du Cube
+27. Brancher les câbles de commande des ESC dans les ports "Main Out" 1 à 4, et noter quel câble est branché dans quel port
+28. Fixer le module de COM manette (Spectrum + OSM-X) sur la plaque supérieure
+	28.1 Brancher le câble d'alimentation du Spectrum dans le port RCIN du Cube
+	28.2 Brancher le câble entre le Spectrum et le OSM-X (Voir photo)
+29. Fixer l'antenne du Spectrum sur le côté de la plaque supérieure avec du ruban adhésif
+30. Fixer le module de COM GCS sur la plaque supérieure, et brancher le câble d'alimentation du module COM GCS dans le port TELEM1 du Cube
+31. Visser les antennes du module de COM GCS
+32. Fixer l'extension micro-USB et le buzzer sur la plaque supérieure, et brancher le câble dans le port USB1 du Cube
+33. Fixer le bouton d'armement dans une ouverture de la plaque supérieure, et brancher le câble dans le port GPS1 du Cube
+34. Fixer le bouton d'armement avec du ruban adhésif
+35. Fixer la base du support de fixation GPS dans une ouverture de la plaque supérieure
+	NOTE: ne pas trop serrer la base de fixation, de sorte à pouvoir régler l'alignement de la base avec le Cube
+36. (TODO) assemblage du GPS sur son support de fixation, puis sur le tube en carbone
+37. Fixer le tube en carbone sur la base de fixation
+38. Brancher le câble du GPS dans le port CANX du Cube
+	NOTE: expliciter quel GPS est branché dans quel port CAN
+39. Répéter les étapes 35 à 38 pour l'autre GPS
+
+40. Fixer les trains d'atterrissage à leur "flat bar" avec un boulon M3x30
+41. Identifier les "flat bars" à leur train d'atterrissage correspondant
+42. Fixer les trains d'atterrissage au bras moteurs avec un boulon M3x30 et l'entretoise en PLA
+
+43. Fixer l'immatriculation du drone sous la plaque inférieure, de sorte qu'elle soit visible en vol, ainsi que sur l'un des bras
+
+44+. (TODO) RPi + Caméra
+END

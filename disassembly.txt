@@ -1,0 +1,126 @@
+# Étapes de désassemblage
+
+## Champ de vol
+
+1. Débrancher la batterie
+2. Dévisser les hélices
+    2.1 Remettre les hélices dans leur étui protecteur
+    2.2 S'assurer que l'entretoise est retiré
+    2.3 Mettre la quincaillerie de fixation des hélices dans leur sac
+END
+
+## Désassemblage
+
+--- RPi ---
+Outils: None
+1. Débrancher les câbles du RPi (COM + alim.)
+2. Retirer le RPi (strap + dual-lock)
+3. Débrancher le câble de COM du Cube
+    3.1 Passer le câble à travers les ouvertures sur les plaques pour le dégager
+    3.2 Retirer le RPi du drone
+/--- RPi ---
+
+--- GPS ---
+3. Retirer les GPS
+    3.1 Débrancher le câble du contrôleur de vol (CANX, X = (1,2))
+    3.2 Dévisser les vis de la base des antennes
+        Clé hex M2.5
+        Pince crocodile à "nez long" (i.e. qqc pour tenir fermement les écrous)
+	3.3 Retirer l'antenne et la plaque de fixation du drone
+	3.4 répéter 3.1 à 3.3 pour l'autre antenne.
+NOTE: dans le guide d'assemblage, ajouter une section "N.B." où on mentionne de noter quel GPS est branché dans quel port (e.g. CAN1: gauche, CAN2: droit).
+/--- GPS ---
+
+--- Antenne RC ---
+4. Débrancher le câble (TELEM1)
+5. Dévisser les antennes du module de COM
+6. Retirer le module de COM
+/--- Antenne RC ---
+
+--- OSM X + Spectrum ---
+7. Débrancher le câble RCIN du contrôleur de vol
+8. Libérer l'antenne radio du module Spectrum
+9. Débrancher le câble reliant les deux modules
+10. Retirer les deux modules du drone
+/--- OSM X + Spectrum ---
+
+--- Extension USB + Buzzer ---
+NOTE: deux composantes dans les même étapes, car les deux sont branchés dans le même port
+11. Débrancher le câble du port USB du contrôleur de vol
+12. Retirer le câble d'extension USB & le buzzer du drone
+/--- Extension USB + Buzzer ---
+
+--- Bouton d'armement ---
+13. Débrancher le câble du port GPS1 du contrôleur de vol
+14. Retirer le bouton d'armement des moteurs du drone
+/--- Bouton d'armement ---
+
+--- Câbles ESC ---
+NOTE: dans le guide d'assemblage, ajouter une section "N.B." où on mentionne de noter quel câble de commande ESC est branché dans quel port sur le contrôleur de vol.
+	ESC 1 -> 1
+	ESC 3 -> 2
+	ESC 4 -> 3
+	ESC 2 -> 4
+15. Débrancher les câbles ESC du contrôleur de vol
+16. Passer les câbles ESC à travers la plaque supérieure pour les libérer
+/--- Câbles ESC ---
+
+--- Cube ---
+17. Débrancher le câble d'alimentation du contrôleur de vol du port POWER
+18. Passer le câble d'alim. à travers les deux plaques supérieures pour le libérer
+19. Retirer le contrôleur de vol du drone
+/--- Cube ---
+
+NOTE: avant de procéder aux étapes suivantes, s'assurer de couper toutes les attaches temporaires ("tie-wrap") avec une pince "flush cut".
+20. Débrancher tous les câbles du PCB
+21. Débrancher tous les câbles du convertisseur de tension "Mauch"
+22. Retirer le convertisseur de tension "Mauch" du drone
+23. Retirer le PL-sensor "Mauch" du drone
+24. Retirer le PCB du drone
+
+25. Retirer la protection des boulons M5 de fixation de la plaque + PCB
+26. Dévisser les fixations (boulons & écrous) extérieures avec une clé anglaise 10mm et une "vice grip" (pour tenir fermement la tige filetée) (x4)
+27. Dévisser les fixations (boulons & écrous) intérieures avec une clé anglaise 8mm et une clé hexagonale M4 (ne pas les retirer tout de suite!!!)
+28. Retirer la plaque supérieure du drone
+
+29. Retirer les boulons des fixations intérieures des bras moteurs
+	NOTE: ajouter une section "tips & tricks" où on mentionne que si on souhaite accélérer le processus d'assemblage ultérieur, en retirant les boulons du support de fixation du PCB, remplacer les vis par une attache auto-bloquante pour préserver l'alignement des entretoises des bras moteurs
+30. Retirer le support de fixation du PCB du drone
+
+31. Dévisser les "flat bars" en aluminium des trains d'atterrissage avec une clé hexagonale M2.5 et une pince crocodile (pour tenir fermement l'écrou) (x4)
+	NOTE: Ne pas dévisser les "flat bars" des tiges filetées
+32. Libérer les "flat bars" des trains d'atterrissage
+	NOTE: La structure devient instable à cette étape, alors peut-être suggérer d'ajouter un bloc en-dessous de la plaque inférieure pour supporter la structure
+	NOTE: ajouter une section "N.B." où on mentionne d'identifier clairement quelle "flat bar" correspond à quel train d'atterissage
+
+33. S'assurer que tous les câbles passant à travers les bras moteurs soient libres (de mouvement)
+34. Retirer l'assemblage [bras moteurs, train d'atterrisage} du drone (x4)
+	NOTE: ajouter une section "tips & tricks" où on mentionne que si on souhaite accélérer le processus d'assemblage ultérieur, en retirant les boulons du support de fixation du PCB, remplacer les boulons par une attache auto-bloquante pour préserver l'alignement des entretoises extérieurs des bras moteurs
+
+35. Retirer la plaque intermédiaire du drone
+36. Dévisser les "flat bars" en aluminium de la plaque inférieure avec une clé anglaise 10mm et une "vice grip" (pour tenir fermement la tige filetée), et retirer les écrous et les "flat bars" (x4)
+37. Retirer la plaque inférieure des tiges filetées
+38 (optionnel). Retirer la strap de fixation de la batterie
+END
+
+
+## Désassemblage module bras moteurs & train d'atterrissage
+
+1. Déviser le support de fixation des trains d'atterrisage avec une clé hexagonale M2.5 (x4)
+2. Retirer le train d'atterrissage du bras moteur (x4)
+
+--- Train d'atterrissage ---
+3. Dévisser le support de fixation du train d'atterrisage avec une clé hexagonale M2.5, et retirer le boulon et l'écrou
+4. Dévisser le coussin du train d'atterrisage avec une clé hexagonale M2.5, et retirer le boulon et l'écrou
+/--- Train d'atterrissage ---
+
+--- Bras moteur ---
+NOTE: ajouter une section "N.B." où on mentionne qu'idéalement le bras moteur ne devrait jamais être déposé de sorte que le moteur supporte la charge.
+5. Débrancher le câble entre le moteur et l'ESC
+6. Débrancher les deux câbles (alim. + commande) passant dans le bras moteur
+
+7. Dévisser les deux boulons de fixation des moteurs, et les retirer
+8. Retirer les quatre entretoises des bras moteurs
+	NOTE: retirer les spacers peut s'avérer difficile. Suggérer d'utiliser une longue tige rigide pour pousser les spacers.
+9. Retirer le câble du bras moteur
+/--- Bras moteur ---
