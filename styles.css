@@ -53,6 +53,10 @@ h3 {
     line-height: 1.25;
 }
 
+li {
+    margin-bottom: 0.75rem;
+}
+
 .intro {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 250px;
@@ -188,7 +192,9 @@ h3 {
 
 .tool-reference {
     position: relative;
-    display: inline-block;
+    /* Bullets disappear if enabled */
+    /* display: inline-block;  */
+    margin-bottom: 0.25rem;
 }
 
 .tool-trigger {
@@ -203,7 +209,7 @@ h3 {
     z-index: 5;
     top: calc(100% + 0.4rem);
     left: 0;
-    width: min(260px, 80vw);
+    width: min(260px, 20vw);
     padding: 0.75rem;
     border: 1px solid #aeb8c3;
     border-radius: 8px;
@@ -214,7 +220,7 @@ h3 {
 .tool-card img {
     display: block;
     width: 100%;
-    aspect-ratio: 4 / 3;
+    /* aspect-ratio: 4 / 3; */
     object-fit: contain;
 }
 

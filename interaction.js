@@ -136,7 +136,7 @@ const tools = {
     },
     Wrench8mm: {
         name: "Clé anglaise 8 mm",
-        image: "images/tools/wrench_10mm.webp",
+        image: "images/tools/wrench_8mm.webp",
         alt: "Illustration d'une clé anglaise 8 mm",
     },
     Wrench10mm: {
