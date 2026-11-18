@@ -168,6 +168,24 @@ h3 {
     margin-top: 0.5rem;
 }
 
+.note {
+    display: flex;
+    align-items: flex-start;
+    list-style: none;
+}
+
+.note-icon {
+    display: inline-flex;
+    flex: 0 0 16px;
+    margin-right: 0.25rem;
+    margin-top: 0.25rem;
+}
+
+.note-content {
+    display: inline-block;
+    padding-left: 0.25rem;
+}
+
 .tool-reference {
     position: relative;
     display: inline-block;
