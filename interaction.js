@@ -105,11 +105,11 @@ function demoImage(label) {
     });
 
     const svg = `
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
-            <rect width="800" height="600" fill="#e7edf3"/>
-            <rect x="60" y="60" width="680" height="480"
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800">
+            <rect width="600" height="800" fill="#e7edf3"/>
+            <rect x="60" y="60" width="480" height="680"
               rx="24" fill="#fff" stroke="#aebbc8" stroke-width="8"/>
-            <text x="400" y="300" text-anchor="middle"
+            <text x="300" y="400" text-anchor="middle"
               font-family="sans-serif" font-size="36"
               fill="#33465a">${safeLabel}</text>
           </svg>
@@ -249,7 +249,7 @@ steps.forEach((step, index) => {
     const title = step.querySelector("h2 span").textContent.trim();
 
     step.id = `step-${number}`;
-    step.querySelector(".step-number").textContent = `Step ${number}`;
+    step.querySelector(".step-number").textContent = `Étape ${number}`;
 
     const item = document.createElement("li");
     const link = document.createElement("a");
@@ -292,18 +292,74 @@ for (const image of document.querySelectorAll("img[data-demo]")) {
 
 const lightbox = document.querySelector("#lightbox");
 const enlargedImage = lightbox.querySelector("img");
+const lightboxStage = lightbox.querySelector(".lightbox-stage");
+let isImageZoomed = false;
+let panX = 0;
+let panY = 0;
+
+function updateImageZoom() {
+    enlargedImage.style.transform = isImageZoomed
+        ? `translate(${panX}px, ${panY}px) scale(1.5)`
+        : "translate(0, 0) scale(1)";
+    enlargedImage.classList.toggle("zoomed", isImageZoomed);
+}
+
+function resetImageZoom() {
+    isImageZoomed = false;
+    panX = 0;
+    panY = 0;
+    updateImageZoom();
+}
+
+function toggleImageZoom() {
+    isImageZoomed = !isImageZoomed;
+    if (!isImageZoomed) {
+        panX = 0;
+        panY = 0;
+    }
+    updateImageZoom();
+}
+
+function closeLightbox() {
+    lightbox.close();
+}
 
 lightbox.querySelector(".lightbox-close").addEventListener("click", () => {
-    lightbox.close();
+    closeLightbox();
 });
 
-lightbox.addEventListener("click", (event) => {
-    if (event.target === lightbox || event.target.classList.contains(
-        "lightbox-stage"
-    )) {
-        lightbox.close();
-    }
+lightbox.addEventListener("close", () => {
+    document.body.classList.remove("lightbox-open");
 });
+
+lightboxStage.addEventListener("click", (event) => {
+    if (event.target === enlargedImage) {
+        toggleImageZoom();
+        return;
+    }
+
+    closeLightbox();
+});
+
+lightboxStage.addEventListener("wheel", (event) => {
+    if (!isImageZoomed) return;
+
+    event.preventDefault();
+    if (event.shiftKey) {
+        panX -= event.deltaY || event.deltaX;
+    } else {
+        panY -= event.deltaY;
+    }
+
+    const imageWidth = enlargedImage.offsetWidth * 2.0;
+    const imageHeight = enlargedImage.offsetHeight * 2.0;
+    const maxX = Math.max(0, (imageWidth - lightboxStage.clientWidth) / 2);
+    const maxY = Math.max(0, (imageHeight - lightboxStage.clientHeight) / 2);
+
+    panX = Math.min(maxX, Math.max(-maxX, panX));
+    panY = Math.min(maxY, Math.max(-maxY, panY));
+    updateImageZoom();
+}, { passive: false });
 
 for (const step of steps) {
     const thumbnails = [...step.querySelectorAll(".thumbnail")];
@@ -342,6 +398,8 @@ for (const step of steps) {
     mainButton.addEventListener("click", () => {
         enlargedImage.src = mainImage.src;
         enlargedImage.alt = mainImage.alt;
+        resetImageZoom();
+        document.body.classList.add("lightbox-open");
         lightbox.showModal();
     });
 }
