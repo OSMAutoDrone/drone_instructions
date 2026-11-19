@@ -128,7 +128,7 @@ li {
 
 .step-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1.25fr) minmax(260px, 1fr);
+    grid-template-columns: minmax(0, 400px) minmax(260px, 1fr);
     gap: 1.5rem;
     align-items: start;
 }
@@ -143,6 +143,7 @@ li {
 
 .main-photo {
     width: 100%;
+    max-width: 400px;
     aspect-ratio: 3 / 4;
     overflow: hidden;
 }
@@ -251,8 +252,10 @@ li {
 }
 
 .lightbox-stage img {
-    max-width: 80%;
-    max-height: 80%;
+    width: auto;
+    height: auto;
+    max-width: calc(100vw - 2rem);
+    max-height: calc(100vh - 5rem);
     object-fit: contain;
     transform-origin: center;
     cursor: zoom-in;
