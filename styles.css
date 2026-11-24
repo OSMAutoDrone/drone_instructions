@@ -222,6 +222,15 @@ li {
     box-shadow: 0 8px 24px #0003;
 }
 
+.tool-card-image {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: zoom-in;
+}
+
 .tool-card img {
     display: block;
     width: 100%;

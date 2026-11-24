@@ -17,21 +17,28 @@
             <div>
                 <h2 id="introduction">Introduction</h2>
                 <p>
-                    This example shows the structure of our drone assembly guide.
-                    Replace the sample parts, photos, and instructions with those for
-                    our actual build.
-                </p>
-                <p>
-                    Keep the battery disconnected and propellers removed while
-                    assembling or checking the drone. Verify wiring against the
-                    specifications for our particular components.
+                    Utiliser ce guide pour assembler, en partie ou en entier, le drone. Ce guide considère que les
+                    étapes suivantes ont été réalisées <strong>AVANT</strong> de commencer le désassemblage:
+                <ul>
+                    <li>Usinage des bras moteurs</li>
+                    <li>Usinage des trains d'atterrissage</li>
+                    <li>Usinage des plaques</li>
+                    <li>Usinage des tiges de fixation des GPS</li>
+                    <li>Impression des patins en TPU</li>
+                    <li>Impression des supports de fixation des trains d'atterrissage en TPU</li>
+                    <li>Impression du support de fixation du PCB en PLA</li>
+                    <li>Impression de la coquille du module de communication avec la station de contrôle au sol en PLA
+                    </li>
+                    <li>Impression des bases de fixation des GPS et des supports de fixation GPS</li>
+                    <li>Fabrication et assemblage du PCB</li>
+                    <li>Fabrication des câbles d'alimentation et de transfert de données</li>
+                    <li>Application des bandes d'attaches refermables sur les pièces</li>
+                </ul>
                 </p>
             </div>
 
-            <!-- TODO: Make floating from 'Introduction' section -->
             <!-- MAYBE: Make floating and follow viewport (?) -->
             <!-- MAYBE: Ctrl+G selects input box (?) -->
-            <!-- MAYBE: Make input box available at the right of summary -->
             <aside class="jump" aria-label="Aller à l'étape">
                 <details>
                     <summary>
@@ -73,24 +80,28 @@
                 </div>
                 <div>
                     <h3>Pièces - Quincaillerie</h3>
-                    <ul>
-                        <li>Vis</li>
-                        <li>Boulons</li>
-                        <li>TODO (TODO: specs)</li>
-                    </ul>
+                    <ul class="bolts-and-nuts"></ul>
                 </div>
                 <div>
                     <h3>Outils</h3>
                     <ul id="tool-list"></ul>
                 </div>
             </div>
+            <div class="exploded-views">
+                <!-- TODO: Add images of exploded views with the part IDs -->
+            </div>
         </section>
 
         <!-- Add, remove, or reorder entire step sections below. -->
         <section class="section step">
+            <section>
+                <h1 id="motor-arm-assembly">Assemblage des Bras Moteurs</h1>
+                <p>Les instructions de cette section sont données pour un bras moteur. Répéter ces instructions pour
+                    tous les bras moteurs.</p>
+            </section>
             <h2>
                 <strong class="step-number"></strong>
-                <span>Préparer la structure</span>
+                <span>Insérer les Câbles dans le Bras</span>
             </h2>
 
             <div class="step-layout">
@@ -109,11 +120,16 @@
                     </div>
 
                     <div class="instructions">
-                        <p>
-                            Lay out the frame pieces. Check that the motor mounting holes
-                            are unobstructed. Use the
-                            <span data-tool="M2p5AllenKey"></span> to loosely fasten the arms.
-                        </p>
+                        <ul>
+                            <li>Passer le câble d'alimentation à travers le bras</li>
+                            <li class="note">Connecteur femelle vers le moteur, connecteur mâle vers la structure
+                                centrale</li>
+                            <li>Passer le câble de commande du
+                                <ESC /> à travers le bras
+                            </li>
+                            <li class="note">Connecteur mâle vers le moteur, connecteur femelle vers la structure
+                                centrale</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -122,7 +138,9 @@
         <section class="section step">
             <h2>
                 <strong class="step-number"></strong>
-                <span>Mount the motors</span>
+                <span>Connecter les câbles au
+                    <ESC />
+                </span>
             </h2>
 
             <div class="step-layout">
@@ -133,38 +151,81 @@
                 <div>
                     <div class="thumbnails" aria-label="Photos for this step">
                         <button class="thumbnail" type="button">
-                            <img data-demo="Motor placement" alt="Example illustration of motor positions" />
+                            <img data-demo="Connecter câbles ESC" alt="Example illustration of the frame from above" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Câble COM ESC ajouter tape"
+                                alt="Example illustration of the mounting holes" />
                         </button>
                     </div>
 
                     <div class="instructions">
                         <ul>
-                            <li>TODO</li>
+                            <li>Connecteur le câble d'alimentation et le câble de commande au
+                                <ESC />
+                            </li>
+                            <li class="note">La connexion du câble de commande est fragile. Il est recommandé de
+                                sécuriser la connexion avec du ruban adhésif.</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
+        <section>
+            <li class="note"><i>N.B.</i> Les deux étapes suivantes sont probablement les plus difficiles et longues de
+                l'assemblage du drone. Elles requièrent une bonne dextérité, et beaucoup de patience.</li>
+        </section>
+
         <section class="section step">
             <h2>
                 <strong class="step-number"></strong>
-                <span>Check the completed assembly</span>
+                <span>Insérer les entretoises du moteur dans le bras</span>
             </h2>
 
-            <!-- No photo: omit .step-layout and write instructions directly. -->
-            <div class="instructions">
-                <p>
-                    With the battery still disconnected and propellers still removed,
-                    check that every fastener is secure and that no wire can touch a
-                    moving part. Document the checks required before first power-up.
-                </p>
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Faire pochon" alt="Example illustration of the frame from above" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Pousser câbles vers 1 côté"
+                                alt="Example illustration of the mounting holes" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Insérer entretoise + alignement trous"
+                                alt="Example illustration of the mounting holes" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Sécuriser avec boulons" alt="Example illustration of the mounting holes" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <ul>
+                            <li>Faire un pochon avec l'entretoise et deux rondelles M3 <span
+                                    data-hardware="M3Washer"></span>, et emballer le pochon avec du ruban de masquage de
+                                sorte à tenir le pochon en place</li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <dialog class="lightbox" id="lightbox" aria-label="Enlarged step photo">
-        <button class="lightbox-close" type="button">Close ×</button>
+    <dialog class="lightbox" id="lightbox" aria-label="Enlarged image preview">
+        <button class="lightbox-close" type="button">
+            <svg width="20" height="20">
+                <polygon points="1,1 19,19" style="fill:white;stroke:white;stroke-width:5;" />
+                <polygon points="1,19 19,1" style="fill:white;stroke:white;stroke-width:5;" />
+            </svg>
+        </button>
         <div class="lightbox-stage">
             <img alt="" />
         </div>

@@ -6,8 +6,8 @@
 const RPi = "Raspberry Pi 5";
 const Cube = "contrôleur de vol";
 const GCS = "station de contrôle au sol";
-const ESC = "variateur de vitesse électronique";
-const ESCs = "variateurs de vitesse électronique";
+const ESC = "variateur de vitesse électronique (ESC)";
+const ESCs = "variateurs de vitesse électronique (ESC)";
 
 function replaceRPiAliases() {
     for (const element of document.querySelectorAll("rpi")) {
@@ -164,17 +164,79 @@ const tools = {
 };
 
 const toolList = document.querySelector("#tool-list");
-let openToolCard = null;
+// Add hardware here; BOM entries and instruction references use these keys.
+const boltsAndNuts = {
+    M3x16Bolt: {
+        id: "&#x3258;",
+        longName: "Boulons M3x16 à tête cylindrique à pans creux",
+        image: "images/bolts-and-nuts/M3x16_bolt.svg",
+        alt: "Illustration de boulons M3x16 à tête cylindrique à pans creux",
+    },
+    M3x25Bolt: {
+        id: "&#x2472;",
+        longName: "Boulons M3x25",
+        image: "images/bolts-and-nuts/M3x25_bolt.svg",
+        alt: "Illustration de boulons M3x25",
+    },
+    M3x30Bolt: {
+        id: "&#x3252;",
+        longName: "Boulons M3x30",
+        image: "images/bolts-and-nuts/M3x30_bolt.svg",
+        alt: "Illustration de boulons M3x30",
+    },
+    M3Washer: {
+        id: "&#x2473;",
+        longName: "Rondelles M3",
+        image: "images/bolts-and-nuts/M3_washer.svg",
+        alt: "Illustration de rondelles M3",
+    },
+    M3Nut: {
+        id: "&#x3251;",
+        longName: "Écrous M3",
+        image: "images/bolts-and-nuts/M3_nut.svg",
+        alt: "Illustration d'écrous M3",
+    },
+    M5x35Bolt: {
+        id: "&#x3255;",
+        longName: "Boulons M5x35",
+        image: "images/bolts-and-nuts/M5x35_bolt.svg",
+        alt: "Illustration de boulons M5x35",
+    },
+    M5Washer: {
+        id: "&#x3256;",
+        longName: "Rondelles M5",
+        image: "images/bolts-and-nuts/M5_washer.svg",
+        alt: "Illustration de rondelles M5",
+    },
+    M5NylonNut: {
+        id: "&#x3257;",
+        longName: "Écrous M5 avec nylon",
+        image: "images/bolts-and-nuts/M5_nylon_nut.svg",
+        alt: "Illustration d'écrous M5 avec nylon",
+    },
+    M6Washer: {
+        id: "&#x3254;",
+        longName: "Rondelles M6",
+        image: "images/bolts-and-nuts/M6_washer.svg",
+        alt: "Illustration de rondelles M6",
+    },
+    M6NylonNut: {
+        id: "&#x3253;",
+        longName: "Écrous M6 avec nylon",
+        image: "images/bolts-and-nuts/M6_nylon_nut.svg",
+        alt: "Illustration d'écrous M6 avec nylon",
+    },
+};
 
-function createToolReference(marker, toolKey) {
-    const tool = tools[toolKey];
-    if (!tool) throw new Error(`Unknown tool: ${toolKey}`);
+let openReferenceCard = null;
 
+function createImageReference(marker, { image: imagePath, alt }, label, accessibleLabel = label) {
     marker.classList.add("tool-reference");
     const trigger = document.createElement("button");
     trigger.type = "button";
     trigger.className = "tool-trigger";
-    trigger.textContent = tool.name;
+    trigger.textContent = label;
+    trigger.setAttribute("aria-label", accessibleLabel);
     trigger.setAttribute("aria-expanded", "false");
 
     const card = document.createElement("span");
@@ -182,22 +244,35 @@ function createToolReference(marker, toolKey) {
     card.hidden = true;
 
     const image = document.createElement("img");
-    image.src = tool.image;
-    image.alt = tool.alt;
-    card.append(image);
+    image.src = imagePath;
+    image.alt = alt;
+    const enlargeButton = document.createElement("button");
+    enlargeButton.type = "button";
+    enlargeButton.className = "tool-card-image";
+    enlargeButton.setAttribute("aria-label", `Enlarge image: ${alt}`);
+    enlargeButton.addEventListener("click", () => showLightbox(image));
+    enlargeButton.append(image);
+    card.append(enlargeButton);
 
     trigger.addEventListener("click", () => {
         const wasOpen = !card.hidden;
-        closeToolCard();
+        closeReferenceCard();
 
         if (!wasOpen) {
             card.hidden = false;
             trigger.setAttribute("aria-expanded", "true");
-            openToolCard = { card, trigger };
+            openReferenceCard = { card, trigger };
         }
     });
 
     marker.append(trigger, card);
+}
+
+function createToolReference(marker, toolKey) {
+    const tool = tools[toolKey];
+    if (!tool) throw new Error(`Unknown tool: ${toolKey}`);
+
+    createImageReference(marker, tool, tool.name);
 }
 
 if (toolList) {
@@ -217,24 +292,47 @@ if (toolList) {
     }
 }
 
+const boltsAndNutsList = document.querySelector("ul.bolts-and-nuts");
+if (boltsAndNutsList) {
+    for (const [hardwareKey, hardware] of Object.entries(boltsAndNuts)) {
+        const item = document.createElement("li");
+        item.append(document.createTextNode(`${hardware.longName} `));
+
+        const marker = document.createElement("span");
+        marker.dataset.hardware = hardwareKey;
+        item.append(marker);
+        boltsAndNutsList.append(item);
+    }
+}
+
 for (const marker of document.querySelectorAll("[data-tool]:not(#tool-list li)")) {
     createToolReference(marker, marker.dataset.tool);
 }
 
-function closeToolCard() {
-    if (!openToolCard) return;
+for (const marker of document.querySelectorAll("span[data-hardware]")) {
+    const hardwareKey = marker.dataset.hardware;
+    const hardware = boltsAndNuts[hardwareKey];
+    if (!hardware) throw new Error(`Unknown hardware: ${hardwareKey}`);
 
-    openToolCard.card.hidden = true;
-    openToolCard.trigger.setAttribute("aria-expanded", "false");
-    openToolCard = null;
+    const id = document.createElement("span");
+    id.innerHTML = hardware.id;
+    createImageReference(marker, hardware, id.textContent, hardware.longName);
+}
+
+function closeReferenceCard() {
+    if (!openReferenceCard) return;
+
+    openReferenceCard.card.hidden = true;
+    openReferenceCard.trigger.setAttribute("aria-expanded", "false");
+    openReferenceCard = null;
 }
 
 document.addEventListener("click", (event) => {
-    if (!event.target.closest(".tool-reference")) closeToolCard();
+    if (!event.target.closest(".tool-reference")) closeReferenceCard();
 });
 
 document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeToolCard();
+    if (event.key === "Escape") closeReferenceCard();
 });
 
 // Generate IDs, visible numbers, and jump links from document order.
@@ -324,6 +422,14 @@ function closeLightbox() {
     lightbox.close();
 }
 
+function showLightbox(image) {
+    enlargedImage.src = image.src;
+    enlargedImage.alt = image.alt;
+    resetImageZoom();
+    document.body.classList.add("lightbox-open");
+    lightbox.showModal();
+}
+
 lightbox.querySelector(".lightbox-close").addEventListener("click", () => {
     closeLightbox();
 });
@@ -395,11 +501,5 @@ for (const step of steps) {
 
     selectPhoto(thumbnails[0]);
 
-    mainButton.addEventListener("click", () => {
-        enlargedImage.src = mainImage.src;
-        enlargedImage.alt = mainImage.alt;
-        resetImageZoom();
-        document.body.classList.add("lightbox-open");
-        lightbox.showModal();
-    });
+    mainButton.addEventListener("click", () => showLightbox(mainImage));
 }

@@ -36,10 +36,8 @@
                 </p>
             </div>
 
-            <!-- TODO: Make floating from 'Introduction' section -->
             <!-- MAYBE: Make floating and follow viewport (?) -->
             <!-- MAYBE: Ctrl+G selects input box (?) -->
-            <!-- MAYBE: Make input box available at the right of summary -->
             <aside class="jump" aria-label="Aller à l'étape">
                 <details>
                     <summary>
@@ -548,10 +546,10 @@
             <div class="instructions">
                 <ul>
                     <li>Retirer le ruban adhésif électrique des boulons M5 du support de fixation</li>
-                    <li>Dévisser les écrous M6 (extérieur) de la plaque supérieure avec la <span
+                    <li>Dévisser les écrous M6 <span data-hardware="M6NylonNut"></span> (extérieur) de la plaque supérieure avec la <span
                             data-tool="Wrench10mm"></span> en tenant fermement les tiges filetées avec la <span
                             data-tool="ViseGripPliers"></span></li>
-                    <li>Dévisser les écrous M5 (intérieur) de la plaque supérieure avec la <span
+                    <li>Dévisser les écrous M5 <span data-hardware="M5NylonNut"></span> (intérieur) de la plaque supérieure avec la <span
                             data-tool="Wrench8mm"></span> et la <span data-tool="M4AllenKey"></span></li>
                     <li class="note">Ne <strong>pas</strong> retirer les boulons M5 tout de suite: ils aident à retenir
                         les bras moteurs par la friction</li>
@@ -584,7 +582,8 @@
                 <ul>
                     <li>Dévisser les boulons de fixation des supports structurels en aluminium des trains d'atterrissage
                         avec la <span data-tool="M3AllenKey"></span> et la <span data-tool="LongNosePliers"></span></li>
-                    <li class="note">Ne <strong>pas</strong> dévisser les écrous M6 de la plaque inférieure</li>
+                    <li class="note">Ne <strong>pas</strong> dévisser les écrous M6 <span
+                            data-hardware="M6NylonNut"></span> de la plaque inférieure</li>
                     <li class="note">S'assurer que les supports structurels sont identifiés avec leur train
                         d'atterrissage correspondant</li>
                     <li>Dégager les supports structurels en aluminium des trains d'atterrissage</li>
@@ -630,10 +629,12 @@
             </h2>
             <div class="instructions">
                 <ul>
-                    <li>Dévisser les écrous M6 qui fixent les supports structurels en aluminium et la plque inférieure
+                    <li>Dévisser les écrous M6 <span data-hardware="M6NylonNut"></span> qui fixent les supports
+                        structurels en aluminium et la plque inférieure
                         avec la <span data-tool="Wrench10mm"></span>, et tenir fermement les tige filetées avec la <span
                             data-tool="ViseGripPliers"></span></li>
-                    <li>Retirer les écrous M6 et les supports structurels en aluminium</li>
+                    <li>Retirer les écrous M6 <span data-hardware="M6NylonNut"></span> et les supports structurels en
+                        aluminium</li>
                     <li>Retirer la plaque inférieure des tiges filetées</li>
                     <li class="note">(Optionnel) Retirer la sangle de la batterie de la plaque inférieure</li>
                 </ul>
@@ -649,7 +650,7 @@
                 <ul>
                     <li class="note">Cette étape peut être ignorée si un ajustement de la position des écrous sur les
                         tiges filetées n'est pas nécessaire</li>
-                    <li>Retirer les écrous M6 des tiges filetées en les dévissant avec la <span
+                    <li>Retirer les écrous M6 <span data-hardware="M6NylonNut"></span> des tiges filetées en les dévissant avec la <span
                             data-tool="Wrench10mm"></span>, et tenir fermement les tige filetées avec la <span
                             data-tool="ViseGripPliers"></span></li>
                 </ul>
@@ -674,7 +675,7 @@
                         cette
                         étape):</p>
                     <ul>
-                        <li>Dévisser le boulon M3x30 des trains d'atterrissage avec la <span
+                        <li>Dévisser le boulon M3x30 <span data-hardware="M3x30Bolt"></span> des trains d'atterrissage avec la <span
                                 data-tool="M3AllenKey"></span>, et
                             retirer le boulon et l'entretoise en plastique</li>
                         <li>Retirer le train d'atterrissage du bras moteur</li>
@@ -769,7 +770,7 @@
                         cette
                         étape):</p>
                     <ul>
-                        <li>Dévisser le boulon M3x30 des trains d'atterrissage avec la <span
+                        <li>Dévisser le boulon M3x30 <span data-hardware="M3x30Bolt"></span> des trains d'atterrissage avec la <span
                                 data-tool="M3AllenKey"></span>, et
                             retirer le boulon et l'entretoise en plastique</li>
                         <li>Retirer le train d'atterrissage du bras moteur</li>
@@ -784,7 +785,7 @@
                 </h2>
                 <div class="instructions">
                     <ul>
-                        <li>Dévisser le boulon M3x25 du support de fixation du train d'atterrissage avec la <span
+                        <li>Dévisser le boulon M3x25 <span data-hardware="M3x25Bolt"></span> du support de fixation du train d'atterrissage avec la <span
                                 data-tool="M3AllenKey"></span> et retirer le boulon</li>
                         <li>Retirer le support de fixation</li>
                     </ul>
@@ -798,7 +799,7 @@
                 </h2>
                 <div class="instructions">
                     <ul>
-                        <li>Dévisser le boulon M3x25 du patin <span data-tool="M3AllenKey"></span> et retirer le boulon
+                        <li>Dévisser le boulon M3x25 <span data-hardware="M3x25Bolt"></span> du patin <span data-tool="M3AllenKey"></span> et retirer le boulon
                         </li>
                         <li>Retirer le patin</li>
                     </ul>
@@ -808,7 +809,7 @@
     </main>
 
 
-    <dialog class="lightbox" id="lightbox" aria-label="Enlarged step photo">
+    <dialog class="lightbox" id="lightbox" aria-label="Enlarged image preview">
         <button class="lightbox-close" type="button">
             <svg width="20" height="20">
                 <polygon points="1,1 19,19" style="stroke:white;stroke-width:5;" />
