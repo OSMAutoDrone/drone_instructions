@@ -79,12 +79,21 @@
                     </ul>
                 </div>
                 <div>
-                    <h3>Pièces - Quincaillerie</h3>
-                    <ul class="bolts-and-nuts"></ul>
+                    <h3>Pièces - Boulonnerie</h3>
+                    <ul id="bolts-and-nuts-list"></ul>
                 </div>
                 <div>
                     <h3>Outils</h3>
                     <ul id="tool-list"></ul>
+                </div>
+                <div>
+                    <h3>Consommables</h3>
+                    <ul id="consumable-list">
+                        <!-- <li>Ruban adhésif électrique</li>
+                        <li>Ruban de masquage</li>
+                        <li>Rouleau de bande d'attache refermable (Dual-Lock™)</li>
+                        <li>Attaches autobloquantes</li> -->
+                    </ul>
                 </div>
             </div>
             <div class="exploded-views">
@@ -112,10 +121,12 @@
                 <div>
                     <div class="thumbnails" aria-label="Photos for this step">
                         <button class="thumbnail" type="button">
-                            <img data-demo="Frame: top view" alt="Example illustration of the frame from above" />
+                            <img src="images/assembly/1_passer_cable_alimentation.webp"
+                                alt="Insérer câble d'alimentation" />
                         </button>
                         <button class="thumbnail" type="button">
-                            <img data-demo="Frame: mounting holes" alt="Example illustration of the mounting holes" />
+                            <img src="images/assembly/2_passer_cable_contrôleur.webp"
+                                alt="Insérer câble de commande ESC" />
                         </button>
                     </div>
 
@@ -151,17 +162,14 @@
                 <div>
                     <div class="thumbnails" aria-label="Photos for this step">
                         <button class="thumbnail" type="button">
-                            <img data-demo="Connecter câbles ESC" alt="Example illustration of the frame from above" />
-                        </button>
-                        <button class="thumbnail" type="button">
-                            <img data-demo="Câble COM ESC ajouter tape"
-                                alt="Example illustration of the mounting holes" />
+                            <img src="images/assembly/3_brancher_ESC.webp"
+                                alt="Example illustration of the frame from above" />
                         </button>
                     </div>
 
                     <div class="instructions">
                         <ul>
-                            <li>Connecteur le câble d'alimentation et le câble de commande au
+                            <li>Connecter le câble d'alimentation et le câble de commande au
                                 <ESC />
                             </li>
                             <li class="note">La connexion du câble de commande est fragile. Il est recommandé de
@@ -172,7 +180,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="section">
             <li class="note"><i>N.B.</i> Les deux étapes suivantes sont probablement les plus difficiles et longues de
                 l'assemblage du drone. Elles requièrent une bonne dextérité, et beaucoup de patience.</li>
         </section>
@@ -207,11 +215,1159 @@
                     </div>
 
                     <div class="instructions">
+                        <p>Répéter les manipulations suivantes pour les deux entretoises du moteur:</p>
                         <ul>
                             <li>Faire un pochon avec l'entretoise et deux rondelles M3 <span
                                     data-hardware="M3Washer"></span>, et emballer le pochon avec du ruban de masquage de
                                 sorte à tenir le pochon en place</li>
-                            <li></li>
+                            <li>Pousser les câbles à l'intérieur du bras vers un côté, de sorte à dégager le plus
+                                d'espace possible pour l'entretoise</li>
+                            <li>Glisser l'entretoise dans le bras, et l'aligner avec le trou de fixation du moteur</li>
+                            <li class="note">Utiliser une longue tige rigide pour faciliter le glissement de
+                                l'entretoise dans le bras</li>
+                            <li>Sécuriser le positionnement de l'entretoise en insérant un boulon M3 <span
+                                    data-hardware="M3x25Bolt"></span> à travers le trou de fixation et l'entretoise, de
+                                sorte à maintenir en place jusqu'à l'installation du moteur</li>
+                            <li class="note">Une attache autobloquante est une laternative viable pour la fixation
+                                temporaire</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Installer le Moteur sur le Bras</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img src="images\assembly\13_visser_moteur.webp" alt="TODO" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img src="images\assembly\17_espacement_adequat_boulon1.webp"
+                                alt="Espacement suffisant 1" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img src="images\assembly\18_espacement_adequat_boulon2.webp"
+                                alt="Espacement suffisant 2" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img src="images\assembly\14_espacement_manquant_boulon1.webp"
+                                alt="Espacement insuffisant 1" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img src="images\assembly\15_espacement_manquant_boulon2.webp"
+                                alt="Espacement insuffisant 2" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Ajouter rondelle" alt="TODO" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <ol>
+                            <li id="screw_motor_bolts">Visser le moteur sur le bras avec les deux boulons M3 <span
+                                    data-hardware="M3x25Bolt"></span> (mêmes que ceux installés à l'étape précédente)
+                            </li>
+                            <li>Vérifier l'espacement entre le pas de vis et la bobine du moteur. Si l'espacement est
+                                suffisant, passer à l'étape suivante. Si l'espacement est insuffisant, faire les
+                                manipulations suivantes:</li>
+                            <ul>
+                                <li class="note">(les manipulations sont itératives, et peuvent nécessiter plusieurs
+                                    répétitions pour assurer un espacement suffisant pour tous les boulons)</li>
+                                <li>Dévisser les boulons M3 <span data-hardware="M3x25Bolt"></span> du moteur, et
+                                    retirer le moteur
+                                </li>
+                                <li>Retirer le ou les boulons affecté(s)</li>
+                                <li class="note">Remplacer les boulons M3 <span data-hardware="M3x25Bolt"></span> par
+                                    des attaches autobloquantes de sorte à préserver l'alignement des entretoises</li>
+                                <li class="note">Si un boulon a déjà un espacement suffisant, le sécuriser avec un écrou
+                                    M3 <span data-hardware="M3Nut"></span></li>
+                                <li>Ajouter une rondelle M3 <span data-hardware="M3Washer"></span> au boulon dont
+                                    l'espacement
+                                    est insuffisant (du côté de la tête du boulon, soit en-dessous du bras moteur)</li>
+                                <li>Ré-insérer les boulons M3 <span data-hardware="M3Washer"></span> dans le bras moteur
+                                </li>
+                                <li>Recommencer cette étape depuis la manipulation <a href="#screw_motor_bolts">1.</a>
+                                </li>
+                            </ul>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Connecter le Câble d'Alimentation du Moteur</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img src="images\assembly\19_brancher_moteur.webp" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <ul>
+                            <li>Connecter le câble d'alimentation du moteur (trois branches) au
+                                <ESC />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Fixer le Variateur de Vitesse Électronique au Bras</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img data-demo="TODO" alt="TODO" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <ul>
+                            <li>Fixer le
+                                <ESC /> et ses câbles au bras moteur avec des attaches autobloquantes
+                            </li>
+                            <li class="note">Serrer les attaches le plus possible, de sorte à minimiser le mouvement du
+                                <ESC />. Les <span data-tool="LongNosePliers"></span> sont utiles pour aller chercher un
+                                serrage maximal
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Identifier les Pièces de l'Assemblage</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img data-demo="TODO" alt="TODO" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <p>Identifier les pièces suivantes comme appartenant au même assemblage:</p>
+                        <ul>
+                            <li>Bras moteur</li>
+                            <li>Moteur</li>
+                            <li>Variateur de Vitesse Électronique (ESC)</li>
+                            <li>Câbles passant à travers le bras moteur</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Insérer les Câbles dans le Bras</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img src="images\assembly\21_pousser_cables.webp"
+                                alt="Pousser les câbles de l'ESC dans le bras" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <ul>
+                            <li>Pousser les câbles du
+                                <ESC /> dans le bras moteur
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <li class="note">L'assemblage du moteur est terminé.</li>
+            <!-- TODO: make photo clickable -->
+            <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                <img data-demo="Motor arm exploded view" alt="Vue explosée du bras moteur" />
+            </button>
+        </section>
+
+        <section class="section step">
+            <section>
+                <h1 id="landing-gear-assembly">Assemblage des Trains d'Atterrissage</h1>
+                <p>Les instructions de cette section sont données pour un train d'atterrissage. Répéter ces instructions
+                    pour
+                    tous les trains d'atterrissage.</p>
+            </section>
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Installer le Support de Fixation du Bras Moteur</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img src="" alt="Visser support fixation" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <ul>
+                            <li>Visser le support de fixation avec un boulon M3 <span data-hardware="M3x25Bolt"></span>
+                                et la <span data-tool="M2p5AllenKey"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Installer le Patin</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img data-demo="TODO" alt="TODO" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <ul>
+                            <li>Visser le patin au train avec un boulon M3 <span data-hardware="M3x25Bolt"></span>
+                                et la <span data-tool="M2p5AllenKey"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Vérifier l'Alignement des Pièces</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img data-demo="TODO" alt="TODO" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <p>S'assurer que toutes les pièces soient bien alignées:</p>
+                        <ul>
+                            <li>L'ouverture du support de fixation est perpendiculaire aux trous du patin</li>
+                            <li>L'ouverture du support de fixation est parallèle au trou de fixation du renfort en
+                                aluminium</li>
+                            <li class="note">Les trous du patin sont perpendiculaires trou de fixation du renfort en
+                                aluminium</li>
+                            <li>Si l'alignement n'est pas respecté, dévisser et retirer la pièce mal alignée, et refaire
+                                son étape d'installation en la ré-orientant</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <li class="note">L'assemblage du train d'atterrissage est terminé.</li>
+            <!-- TODO: make photo clickable -->
+            <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                <img data-demo="Landing gear exploded view" alt="Vue explosée du train d'atterrissage" />
+            </button>
+        </section>
+
+        <section class="section step">
+            <section>
+                <h1 id="landing-gear-assembly">Assemblage de la Structure</h1>
+                <p>Les instructions de l'assemblage "principal" du drone.</p>
+            </section>
+
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Installation de la Boulonnerie sur les Tiges Filetées</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img src="images/assembly/22_Ecrou1_tige_filetee.webp"
+                                alt="Visser un premier écrou M6 dans la tige filetée" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img src="images/assembly/23_Ecrou2_tige_filetee.webp"
+                                alt="Visser un second écrou M6 dans la tige filetée" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <p>Répéter les manipulations suivantes pour toutes les tiges filetées:</p>
+                        <ul>
+                            <li>Tenir fermement la tige filetée avec la <span data-tool="ViseGripPliers"></span>, et
+                                visser un écrou M6 <span data-hardware="M6NylonNut"></span> sur la tige filetée avec la
+                                <span data-tool="Wrench10mm"></span> jusqu'à obtenir une distance de 165 mm entre la
+                                face plane de l'écrou et le bout de la tige filetée
+                            </li>
+                            <li class="note">Il est plus facile de visser l'écrou avec nylon en insérant la face plane
+                                dans la tige filetée</li>
+                            <li>Tenir fermement la tige filetée avec la <span data-tool="ViseGripPliers"></span>, et
+                                visser un écrou M6 <span data-hardware="M6NylonNut"></span> sur la tige filetée avec la
+                                <span data-tool="Wrench10mm"></span> jusqu'à obtenir une distance de 20 mm entre la
+                                face plane de l'écrou et le bout de la tige filetée
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Installer la Plaque Inférieure et les Renforts</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img src="images\assembly\24_Installer_plaque_flatbar.webp"
+                                alt="Installer la plaque inférieure et les renforts en alimunium" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img src="images\assembly\25_Installer_4x_tiges.webp"
+                                alt="Répéter pour toutes les tiges filetées" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <ol>
+                            <li>(4x) Insérer une rondelle M6 <span data-hardware="M6Washer"></span> sur les tiges
+                                filetées
+                            </li>
+                            <li>Insérer la plaque inférieure dans les tiges filetées</li>
+                            <li class="note">Respecter l'orientation de la plaque inférieure (face de dessus vers
+                                l'écrou, face de dessous vers le bout des tiges filetées)</li>
+                            <li>(4x) Insérer un renfort en aluminium dans les tiges filetées</li>
+                            <li>(4x) Insérer une rondelle M6 <span data-hardware="M6Washer"></span> sur les tiges
+                                filetées
+                            </li>
+                            <li>(4x) Visser des écrous M6 <span data-hardware="M6NylonNut"></span> sur les tiges
+                                filetées
+                                avec la <span data-tool="Wrench10mm"></span> (tenir fermement les tiges filetées avec la
+                                <span data-tool="ViseGripPliers"></span>)
+                            </li>
+                            <li class="note">Idéalement, les renforts en aluminium sont orientés de façon à garder la
+                                symmétrie par rapport à la plaque inférieure</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Installer la Plaque Intermédiaire</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img src="images\assembly\26_Installer_plaque_intermediaire.webp"
+                                alt="Installer la plaque intermédiaire" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <ul>
+                            <li>Insérer la plaque intermédiaire dans les tiges filetées</li>
+                            <li class="note">Respecter l'orientation de la plaque intermédiaire par rapport aux tiges
+                                filetées (face de dessus vers
+                                le bout des tiges filetées, face de dessous vers l'écrou) et par rapport à la plaque
+                                inférieure (côtés identifiés "avant" alignés)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Installer les Assemblages Bras Moteur</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img src="images\assembly\27_Installer_bras.webp" alt="Installer les bras moteur" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img src="images\assembly\28_Passer_cable_alimentation.webp"
+                                alt="Passer le câble d'alimentation à travers l'ouverture de la plaque intermédiaire" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img src="images\assembly\29_Passer_cable_alimentation_2.webp"
+                                alt="Installer le second bras moteur" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img src="images\assembly\30_Passer_cable_alimentation_3.webp"
+                                alt="Installer le troisième bras moteur" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img src="images\assembly\31_Passer_cable_alimentation_4.webp"
+                                alt="Installer le quatrième bras moteur" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <p>Répéter les manipulations suivantes pour tous les assemblages bras moteur:</p>
+                        <ul>
+                            <li>Insérer le bras moteur sur la plaque intermédiaire dans les tiges filetées</li>
+                            <li class="note">Insérer l'attache autobloquante du trou intérieur à travers la plaque
+                                intermédiaire pour préserver l'alignement de l'entretoise</li>
+                            <li class="note">Retirer l'attache autobloquante du trou extérieur à mesure que le bras est
+                                insérer dans la tige filetée</li>
+                            <li>Passer le câble d'alimentation à travers l'ouverture de la plaque intermédiaire</li>
+                            <li class="note">Utiliser l'ouverture la plus près. Les deux moteurs adjacents au côté
+                                "droit" de la plaque intermédiaire devraient avoir leur câble
+                                d'alimentation passé à travers l'ouverture du côté "droit" (même principe pour le côté
+                                "gauche")</li>
+                            <li>Rassembler tous les câbles de commande des
+                                <ESCs /> du côté "TODO" de la plaque intermédiaire
+                            </li>
+                            <li class="note">S'assurer que tous les câbles de commande soient bien identifiés à leur
+                                bras moteur correspondant, car c'est le dernier moment où ils sont facilement
+                                accessibles</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Installer le Support de Fixation du PCB</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img src="images\assembly\32_Installer_Support_PCB.webp"
+                                alt="Insérer le support de fixation du PCB" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img src="images\assembly\33_Visser_Support_PCB.webp"
+                                alt="Insérer les boulons M5 dans le support de fixation" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <ul>
+                            <li>Insérer le support de fixation du PCB dans les attaches autobloquantes des bras moteur
+                            </li>
+                            <li class="note">Respecter l'orientation. Le côté le plus long de la bande d'attache
+                                refermable devrait être orienté vers le côté "avant" de la plaque intermédiaire</li>
+                            <li class="note">Le support de fixation devrait tenir en place par friction</li>
+                            <li>(4x) Remplacer les attaches autobloquantes par des boulons M5 <span
+                                    data-hardware="M5x35Bolt"></span></li>
+                            <li class="note">Ne pas visser d'écrou sur les boulons: ils devraient tenir en place par
+                                friction</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Installer la Plaque Supérieure</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img src="images\assembly\34_Passer_fil_plaque_haut.webp"
+                                alt="Passer les câbles de commande à travers l'ouverture de la plaque supérieure" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img src="images\assembly\35_Installer_plaque_haut.webp"
+                                alt="Insérer la plaque supérieure, et visser les écrous M5" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img src="images\assembly\36_Visser_plaque_haut.webp" alt="Visser les écrous M6" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <ul>
+                            <li>Déposer la plaque supérieure sur la structure, et passer les câbles de commande des
+                                <ESCs /> à travers l'ouverture de la plaque supérieure
+                            </li>
+                            <li>Insérer la plaque supérieure dans les tiges filetées et les boulons M5 <span
+                                    data-hardware="M5x35Bolt"></span></li>
+                            <li class="note">Respecter l'orientation de la plaque par rapport aux tiges filetées et par
+                                rapport aux plaques inférieure et intermédiaire</li>
+                            <li>Insérer une rondelle M5 <span data-hardware="M5Washer"></span> sur les boulons M5 <span
+                                    data-hardware="M5x35Bolt"></span></li>
+                            <li>Visser les écrous M5 <span data-hardware="M5NylonNut"></span> sur les boulons M5 <span
+                                    data-hardware="M5x35Bolt"></span> avec la <span data-tool="Wrench8mm"></span> et la
+                                <span data-tool="M4AllenKey"></span>
+                            </li>
+                            <li>Insérer une rondelle M6 <span data-hardware="M6Washer"></span> sur les tiges filetées
+                            </li>
+                            <li>Visser les écrous M6 <span data-hardware="M6NylonNut"></span> sur les tiges filetées
+                                avec la <span data-tool="Wrench10mm"></span> (tenir fermement les tiges filetées avec la
+                                <span data-tool="ViseGripPliers"></span>)
+                            </li>
+                            <li>Appliquer du ruban adhésif électrique sur les têtes des boulons M5 <span
+                                    data-hardware="M5x35Bolt"></span> pour éviter toute possibilité d'un contact
+                                électrique</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <li class="note">L'assemblage des éléments structurels est terminé. Prendre une pause bien méritée (et
+                manger une Patte d'ours, quelques biscuits Biscoff, ou une pomme).</li>
+            <li>Les prochaines étapes concernent l'installation des composants électroniques sur le drone.</li>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Installer le Capteur de Tension/Courant</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Fixer PL-sensor" alt="TODO" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Brancher câble d'alim. PL-sensor" alt="TODO" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <ul>
+                            <li>Fixer le capteur de tension/courant sur la plaque intermédiaire</li>
+                            <li class="note">Respecter l'orientation du capteur</li>
+                            <li>Brancher le câble d'alimentation du capteur dans la carte d'alimentation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Connecter les Câbles d'Alimentation des Variateurs de Vitesse Électronique (ESC)</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img data-demo="TODO" alt="TODO" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <ul>
+                            <li>Connecter tous les câbles d'alimentation des
+                                <ESCs /> dans la carte d'alimentation
+                            </li>
+                            <li class="note">Il n'y a pas de port attitré à un câble</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Installer le Convertisseur de Tension 5V</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Fixer Mauch 5V" alt="TODO" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Brancher câble alim. Mauch 5V" alt="TODO" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Brancher câble COM PL-sensor dans Mauch 5V" alt="TODO" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <ul>
+                            <li>Fixer le convertisseur de tension 5V sur la plaque intermédiaire</li>
+                            <li>Connecter le câble de communication entre le capteur de tension/courant et le
+                                convertisseur de tension 5V</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Installer le Contrôleur de Vol</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Fixer Cube sur plaque" alt="TODO" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <ul>
+                            <li>Fixer le
+                                <Cube /> sur la plaque supérieure
+                            </li>
+                            <li>Connecter le câble d'alimentation du
+                                <Cube /> dans le convertisseur de tension 5V
+                            </li>
+                            <li class="note">Port de droite du convertisseur</li>
+                            <li>Passer le câble d'alimentation à travers l'ouvertures des plaques intermédiaire et
+                                supérieure</li>
+                            <li>Connecter le câble d'alimentation dans le port POWER1 du
+                                <Cube />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Connecter les Câbles de Commande des Variateurs de Vitesse Électronique (ESC)</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img data-demo="TODO" alt="TODO" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <ul>
+                            <li>Connecter les câbles de commande des
+                                <ESCs /> dans les ports MAIN OUT (1 à 4) du
+                                <Cube />
+                            </li>
+                            <li class="note">Noter quel câble est connecté dans quel port</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Installer les Modules de Communication de la Manette</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Fixer modules COM manette" alt="TODO" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Connecter câbles" alt="TODO" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Tape sur antenne" alt="TODO" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <ul>
+                            <li>Fixer les modules de communication de la manette sur la plaque supérieure</li>
+                            <li>Connecter le câble d'alimentation du <b>Spectrum</b> dans le port RCIN du
+                                <Cube />
+                            </li>
+                            <li>Connecter le câble entre le <b>Spectrum</b> et le <b>OSM-X</b></li>
+                            <li>Fixer l'antenne du <b>Spectrum</b> sur la plaque supérieure avec du ruban adhésif</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Installer le Module de Communication de la Station de Contrôle au Sol (GCS)</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Fixer module COM GCS" alt="TODO" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Brancher câble TELEM1" alt="TODO" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Visser antennes" alt="TODO" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <ul>
+                            <li>Fixer le module de communication de la
+                                <GCS /> sur la plaque supérieure
+                            </li>
+                            <li>Connecter le câble du module de communication de la
+                                <GCS /> dans le port TELEM1 du
+                                <Cube />
+                            </li>
+                            <li>Visser les antennes sur le module de communication de la
+                                <GCS />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Installer l'Extension Micro-USB et l'Avertisseur Sonore</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Fixer USB + Buzzer" alt="TODO" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Brancher câble USB1" alt="TODO" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <ul>
+                            <li>Installer l'extension micro-usb et l'avertisseur sonore sur la plaque supérieure</li>
+                            <li>Connecter le câble dans le port USB1 du
+                                <Cube />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Installer le Bouton d'Armement des Moteurs</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Fixer bouton armement" alt="TODO" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Brancher câble GPS1" alt="TODO" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Tape sur bouton" alt="TODO" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <ul>
+                            <li>Fixer le bouton d'armement dans une ouverture de la plaque supérieure</li>
+                            <li>Connecter le câble du bouton d'armement dans le port GPS1 du
+                                <Cube />
+                            </li>
+                            <li>Appliquer du ruban adhésif autour du bouton d'armement pour le tenir en place</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Assembler les Antennes GPS</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img data-demo="TODO" alt="TODO" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <p>Répéter les manipulations suivantes pour les deux antennes GPS:</p>
+                        <ul>
+                            <li>Dévisser le boulon M3 en-dessous de l'antenne GPS avec la <span
+                                    data-tool="M2p5AllenKey"></span></li>
+                            <li>Insérer le support de fixation dans l'antenne GPS</li>
+                            <li>Visser l'antenne GPS sur son support de fixation avec le boulon M3 et la <span
+                                    data-tool="M2p5AllenKey"></span></li>
+                            <li>Insérer le support de fixation sur le tube en fibres de carbone</li>
+                            <li>Visser un boulon M3 <span data-hardware="M3x16Bolt"></span> et un écrou M3 <span
+                                    data-hardware="M3Nut"></span> dans le tube avec la <span
+                                    data-tool="M2p5AllenKey"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Installer les Antennes GPS</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img data-demo="TODO" alt="TODO" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <p>Répéter les manipulations suivantes pour les deux antennes GPS:</p>
+                        <ul>
+                            <li>Fixer la base de fixation de l'antenne GPS dans une ouverture de la plaque supérieure,
+                                et la visser avec deux boulons et écrous M3 <span data-hardware="M3x16Bolt"></span><span
+                                    data-hardware="M3Nut"></span> et la <span data-tool="M2p5AllenKey"></span></li>
+                            <li class="note">Ne pas trop serrer la base de fixation, de sorte à pouvoir régler
+                                l'orientation et l'alignement de la base avec le
+                                <Cube />
+                            </li>
+                            <li>Insérer l'assemblage de l'antenne GPS dans le goujon de la base de fixation, et aligner
+                                les trous du tube et du goujon</li>
+                            <li class="note">Respecter l'orientation de l'antenne GPS. La flèche de l'antenne GPS
+                                devrait pointer dans la même direction que la flèche du
+                                <Cube />
+                            </li>
+                            <li>Visser un boulon M3 <span data-hardware="M3x16Bolt"></span> et un écrou M3 <span
+                                    data-hardware="M3Nut"></span> avec la <span data-tool="M2p5AllenKey"></span></li>
+                            <li>Connecter le câble de l'antenne GPS dans le port CANx du
+                                <Cube />
+                            </li>
+                            <li class="note">Utiliser le port CAN (CAN1, CAN2) le plus près, et noter quel câble est
+                                branché dans quel port</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Installer les Trains d'Atterrissage</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img data-demo="TODO" alt="TODO" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <p>Répéter les manipulations suivantes pour tous les trains:</p>
+                        <ul>
+                            <li>Insérer l'ouverture du support de fixation du train autour du bras moteur</li>
+                            <li>Insérer une rondelle M3 <span data-hardware="M3Washer"></span> dans un boulon <span
+                                    data-hardware="M3x30Bolt"></span></li>
+                            <li>Passer le boulon à travers le trou du support de fixation du train d'atterrissage et
+                                l'entretoise du train d'atterrissage</li>
+                            <li>Insérer une rondelle M3 <span data-hardware="M3Washer"></span> dans le boulon <span
+                                    data-hardware="M3x30Bolt"></span></li>
+                            <li>Visser le boulon avec un écrou M3 <span data-hardware="M3Nut"> et la <span
+                                        data-tool="M2p5AllenKey"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Fixer le Renfort en Aluminium</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img data-demo="TODO" alt="TODO" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <p>Répéter les manipulations suivantes pour tous les trains:</p>
+                        <ul>
+                            <li>Insérer une rondelle M3 <span data-hardware="M3Washer"></span> dans un boulon <span
+                                    data-hardware="M3x30Bolt"></span></li>
+                            <li>Passer le boulon à travers le trou pour le renfort du train d'atterrissage et le trou du
+                                renfort en aluminium</li>
+                            <li>Insérer une rondelle M3 <span data-hardware="M3Washer"></span> dans le boulon <span
+                                    data-hardware="M3x30Bolt"></span></li>
+                            <li>Visser le boulon avec un écrou M3 <span data-hardware="M3Nut"> et la <span
+                                        data-tool="M2p5AllenKey"></span></li>
+                            <li>Identifier les renforts en aluminium à leur train d'atterrissage correspondant</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section step">
+            <h2>
+                <strong class="step-number"></strong>
+                <span>Immatriculer le Drone</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Immatriculer dessous" alt="TODO" />
+                        </button>
+                        <button class="thumbnail" type="button">
+                            <img data-demo="Immatriculer bras" alt="TODO" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <ul>
+                            <li>Appliquer l'immatriculation du drone sous la plaque inférieure, de sorte qu'elle soit
+                                visible en vol</li>
+                            <li>Appliquer l'immatriculation du drone sur un des bras moteurs, de sorte qu'elle soit
+                                visible au sol</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <li class="note">L'assemblage du drone est terminé.</li>
+            <!-- TODO: make photo clickable -->
+            <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                <img data-demo="Drone completed" alt="Vue explosée du bras moteur" />
+            </button>
+        </section>
+
+        <section class="section step">
+            <section>
+                <h1 id="gimbal-and-camera-assembly">Assemblage du Module de Capture</h1>
+            </section>
+
+            <h2>
+                <strong class="step-number"></strong>
+                <span>TODO</span>
+            </h2>
+
+            <div class="step-layout">
+                <button class="main-photo" type="button" aria-label="Enlarge step photo">
+                    <img alt="" />
+                </button>
+
+                <div>
+                    <div class="thumbnails" aria-label="Photos for this step">
+                        <button class="thumbnail" type="button">
+                            <img data-demo="En construction" alt="TODO" />
+                        </button>
+                    </div>
+
+                    <div class="instructions">
+                        <ul>
+                            <li>En construction</li>
                         </ul>
                     </div>
                 </div>

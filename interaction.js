@@ -163,68 +163,90 @@ const tools = {
     },
 };
 
-const toolList = document.querySelector("#tool-list");
 // Add hardware here; BOM entries and instruction references use these keys.
 const boltsAndNuts = {
     M3x16Bolt: {
         id: "&#x3258;",
         longName: "Boulons M3x16 à tête cylindrique à pans creux",
-        image: "images/bolts-and-nuts/M3x16_bolt.svg",
+        image: "images/bolts-and-nuts/M3x16_bolt.png",
         alt: "Illustration de boulons M3x16 à tête cylindrique à pans creux",
     },
     M3x25Bolt: {
         id: "&#x2472;",
         longName: "Boulons M3x25",
-        image: "images/bolts-and-nuts/M3x25_bolt.svg",
+        image: "images/bolts-and-nuts/M3x25_bolt.png",
         alt: "Illustration de boulons M3x25",
     },
     M3x30Bolt: {
         id: "&#x3252;",
         longName: "Boulons M3x30",
-        image: "images/bolts-and-nuts/M3x30_bolt.svg",
+        image: "images/bolts-and-nuts/M3x30_bolt.png",
         alt: "Illustration de boulons M3x30",
     },
     M3Washer: {
         id: "&#x2473;",
         longName: "Rondelles M3",
-        image: "images/bolts-and-nuts/M3_washer.svg",
+        image: "images/bolts-and-nuts/M3_washer.png",
         alt: "Illustration de rondelles M3",
     },
     M3Nut: {
         id: "&#x3251;",
         longName: "Écrous M3",
-        image: "images/bolts-and-nuts/M3_nut.svg",
+        image: "images/bolts-and-nuts/M3_nut.png",
         alt: "Illustration d'écrous M3",
     },
     M5x35Bolt: {
         id: "&#x3255;",
         longName: "Boulons M5x35",
-        image: "images/bolts-and-nuts/M5x35_bolt.svg",
+        image: "images/bolts-and-nuts/M5x35_bolt.png",
         alt: "Illustration de boulons M5x35",
     },
     M5Washer: {
         id: "&#x3256;",
         longName: "Rondelles M5",
-        image: "images/bolts-and-nuts/M5_washer.svg",
+        image: "images/bolts-and-nuts/M5_washer.png",
         alt: "Illustration de rondelles M5",
     },
     M5NylonNut: {
         id: "&#x3257;",
         longName: "Écrous M5 avec nylon",
-        image: "images/bolts-and-nuts/M5_nylon_nut.svg",
+        image: "images/bolts-and-nuts/M5_nylon_nut.png",
         alt: "Illustration d'écrous M5 avec nylon",
     },
     M6Washer: {
         id: "&#x3254;",
         longName: "Rondelles M6",
-        image: "images/bolts-and-nuts/M6_washer.svg",
+        image: "images/bolts-and-nuts/M6_washer.png",
         alt: "Illustration de rondelles M6",
     },
     M6NylonNut: {
         id: "&#x3253;",
         longName: "Écrous M6 avec nylon",
-        image: "images/bolts-and-nuts/M6_nylon_nut.svg",
+        image: "images/bolts-and-nuts/M6_nylon_nut.png",
         alt: "Illustration d'écrous M6 avec nylon",
+    },
+};
+
+const consumables = {
+    ElectricTape: {
+        name: "Ruban adhésif électrique",
+        image: "images/consumables/electric_tape1.webp",
+        alt: "Illustration de rubans adhésifs électriques",
+    },
+    MaskingTape: {
+        name: "Ruban de masquage",
+        image: "images/consumables/masking_tape.webp",
+        alt: "Illustration d'un ruban de masquage",
+    },
+    DualLock: {
+        name: "Rouleau de bande d'attache refermable (Dual-Lock™)",
+        image: "images/consumables/dual_lock.webp",
+        alt: "Illustration d'un rouleau de Dual-Lock™",
+    },
+    TieWraps: {
+        name: "Attaches autobloquantes",
+        image: "images/consumables/tie_wraps.webp",
+        alt: "Illustration d'attaches autobloquantes",
     },
 };
 
@@ -275,6 +297,14 @@ function createToolReference(marker, toolKey) {
     createImageReference(marker, tool, tool.name);
 }
 
+function createConsumableReference(marker, consumableKey) {
+    const consumable = consumables[consumableKey];
+    if (!consumable) throw new Error(`Unknown consumable: ${consumableKey}`);
+
+    createImageReference(marker, consumable, consumable.name);
+}
+
+const toolList = document.querySelector("#tool-list");
 if (toolList) {
     for (const [toolKey, tool] of Object.entries(tools)) {
         const item = document.createElement("li");
@@ -292,7 +322,7 @@ if (toolList) {
     }
 }
 
-const boltsAndNutsList = document.querySelector("ul.bolts-and-nuts");
+const boltsAndNutsList = document.querySelector("#bolts-and-nuts-list");
 if (boltsAndNutsList) {
     for (const [hardwareKey, hardware] of Object.entries(boltsAndNuts)) {
         const item = document.createElement("li");
@@ -305,8 +335,22 @@ if (boltsAndNutsList) {
     }
 }
 
+const consumablesList = document.querySelector("#consumable-list");
+if (consumablesList) {
+    for (const [consumableKey, consumable] of Object.entries(consumables)) {
+        const item = document.createElement("li");
+        item.dataset.consumable = consumableKey;
+        createConsumableReference(item, consumableKey);
+        consumablesList.append(item);
+    }
+}
+
 for (const marker of document.querySelectorAll("[data-tool]:not(#tool-list li)")) {
     createToolReference(marker, marker.dataset.tool);
+}
+
+for (const marker of document.querySelectorAll("[data-consumable]:not(#consumable-list li)")) {
+    createConsumableReference(marker, marker.dataset.consumable);
 }
 
 for (const marker of document.querySelectorAll("span[data-hardware]")) {
