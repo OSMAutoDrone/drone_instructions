@@ -545,5 +545,10 @@ for (const step of steps) {
 
     selectPhoto(thumbnails[0]);
 
-    mainButton.addEventListener("click", () => showLightbox(mainImage));
+}
+
+for (const mainButton of document.querySelectorAll(".main-photo")) {
+    mainButton.addEventListener("click", () => {
+        showLightbox(mainButton.querySelector("img"));
+    });
 }
